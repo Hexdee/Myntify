@@ -460,20 +460,20 @@ export function Dashboard() {
         const nfts = [
           {
             id: "1",
-            name: "My NFT",
-            description: "This is my NFT",
-            imageUrl: "https://example.com/nft-image.png",
+            name: "House 1",
+            description: "First building in the island",
+            imageUrl:
+              "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?cs=srgb&dl=pexels-binyaminmellish-106399.jpg&fm=jpg",
             owner: account.address,
           },
         ];
 
-        // For simplicity, we'll put all NFTs in one collection
-        // In a real app, you might have multiple collections
         const collection: NFTCollection = {
-          id: "my-unique-arts",
-          name: "My Unique Arts",
-          description: "A collection of unique digital art NFTs",
-          imageUrl: "https://example.com/nft-collection-image.png",
+          id: "0xd3945b5700000000000000000000000000000000000000000000000000000000",
+          name: "Greed Island",
+          description: "An Estate in a very isolated and beautiful place",
+          imageUrl:
+            "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
           nfts: nfts,
         };
 
