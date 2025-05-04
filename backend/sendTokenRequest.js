@@ -1,5 +1,5 @@
 console.log('Sending request to create token...');
-fetch('http://localhost:3000/create-token', {
+fetch('http://146.190.94.23/create-token', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -14,6 +14,9 @@ fetch('http://localhost:3000/create-token', {
     icon: 'https://example.com/token-icon.png',
   }),
 })
-  .then((response) => response.json())
-  .then((data) => console.log(data))
-  .catch((error) => console.error('Error:', error));
+  .then((response) => {
+     console.log(response);
+     response.json()
+    .then((data) => console.log(data))
+    .catch((error) => console.error('Error:', error));
+  })

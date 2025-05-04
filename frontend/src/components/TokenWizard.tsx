@@ -126,7 +126,7 @@ export function TokenWizard() {
     }
 
     try {
-      const res = await fetch("http://146.190.94.23:3000/create-token", {
+      const res = await fetch("https://api.myntify.app/create-token", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

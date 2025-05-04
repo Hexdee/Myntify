@@ -254,4 +254,8 @@ app.post('/create-token', async (req, res) => {
   }
 });
 
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome to Myntify!' });
+});
+
 export default app;
