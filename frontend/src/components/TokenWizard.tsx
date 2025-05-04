@@ -135,7 +135,7 @@ export function TokenWizard() {
           name: formData.name,
           symbol: formData.symbol,
           description: formData.description,
-          decimals: 18,
+          decimals: 6,
           type: "SIMPLE",
           icon: formData.iconUrl,
           totalSupply: formData.supply,
