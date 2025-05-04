@@ -13,9 +13,12 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: '*',
+  })
+);
 app.use(morgan('dev'));
-
 // Move templates
 function generateSimpleCoin(params) {
   return `
@@ -244,7 +247,7 @@ app.post('/create-token', async (req, res) => {
   } finally {
     // Clean up the temporary package
     try {
-      // rmSync(tempDir, { recursive: true, force: true });
+      rmSync(tempDir, { recursive: true, force: true });
     } catch (cleanupError) {
       console.error('Failed to clean up temporary package:', cleanupError);
     }

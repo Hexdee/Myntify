@@ -126,7 +126,7 @@ export function TokenWizard() {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/create-token", {
+      const res = await fetch("http://146.190.94.23:3000/create-token", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -138,7 +138,7 @@ export function TokenWizard() {
           decimals: 6,
           type: "SIMPLE",
           icon: formData.iconUrl,
-          totalSupply: formData.supply,
+          totalSupply: Number(formData.supply) * 10 ** 6,
         }),
       });
       const data = await res.json();
@@ -150,7 +150,6 @@ export function TokenWizard() {
           dependencies: data.dependencies,
           modules: data.modules,
         });
-        console.log(publishCall);
         tx.transferObjects([publishCall], account.address);
 
         signAndExecuteTransaction(
